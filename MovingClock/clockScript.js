@@ -1,31 +1,32 @@
- function calculateDegree(number){
+ function calculateDeg(number){
     return ((number/60)* 360); 
 }
  /*for the seconds hand*/
-   let secondHand =document.getElementById("second-hand");
-   const now = new Date();
-function setDate(){
+   const secondHand =document.getElementById("second-hand");
+function setSeconds(){
+     const now = new Date();
     const seconds = now.getSeconds();
    // console.log(seconds);
-    const secondsDegree = 
+    const secondsDegree = calculateDeg(seconds);
     secondHand.style.transform = `rotate(${secondsDegree}deg)`;
    // console.log(secondsDegree);
 }
-
+  setInterval(setSeconds, 1000);
  /* for the minute hand*/
-  const minutes =now.getMinutes; 
   const minuteHand =document.getElementById("minute-hand");
-  function setminute(){
+function setminute(){
+     const now = new Date();
     const minutes = now.getMinutes();
-    const minutesDegree = calculateDegree(minutes);
-    minuteHand.style.transform =`rotate(${minutesDegree})`;
+    const minutesDegree = calculateDeg(minutes);
+    minuteHand.style.transform =`rotate(${minutesDegree}deg)`;
 
 }
-setInterval(setminute,100000);
+setInterval(setminute ,1000);
 
 const hourHand =document.getElementById("hour-hand"); 
 function sethour(){
-     const hours= now.getHours();
-     const hours
+     const now = new Date();
+     const hours= (now.getHours()) * 30 + (now.getMinutes() *0.5); //formula to calculate degree of the hours hand
+     hourHand.style.transform =`rotate(${hours}deg)`;
 }
-sethour();
+setInterval(sethour , 1000);

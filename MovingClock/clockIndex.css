@@ -31,22 +31,24 @@ body {
 .hand {
     position: absolute;
     bottom: 50%; 
-    width:6px;
     left: 50%;   
     transform-origin: bottom; 
-     margin-left: -3px; /* Centers the 6px width perfectly */
-    background: black;
+    background-color: rgb(15, 63, 105);
     border-radius: 15px;
+      transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 /* 4. The Specific Hour Hand Dimensions */
 #hour-hand {
-    height: 70px;
+    height: 55px;
+    width:6px;
+       margin-left: -3px;
+    transform: rotate(0deg);
 }
-#second-hand {
-     height: 90px;
-}
-#minute-hand {
+ 
+#minute-hand, #second-hand{
     height: 80px;
-    transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+    width: 5px;
+    margin-left: -2.5px;
+    transform: rotate(0deg);
 }
