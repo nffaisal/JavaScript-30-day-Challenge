@@ -1,2 +1,3 @@
-document.getElementById
-("date").innerHTML ="Today Date: " + Date();
+window.addEventListener( 'keydown', function(e){
+    console.log(e.key);
+} )
