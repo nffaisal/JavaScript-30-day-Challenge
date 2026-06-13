@@ -1,0 +1,36 @@
+body {
+    background-image: url('summerBackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+
+    
+}
+#clock-parent{
+     border-radius: 50%;
+     border-width: 15px;
+     border-color: rgb(10, 123, 244);
+     width: 200px;
+     height: 200px;
+     border-style: solid;
+     transition-property: transform border-color;
+     transition-timing-function: ease;
+     transition-duration: 4s;
+    
+   
+    
+}
+ #clock-parent:hover{
+    transform: rotate(1turn);
+    border-color:rgb(93, 163, 238) ;
+}
+#hour-hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    transform: rotate(90deg);
+
+
+}
