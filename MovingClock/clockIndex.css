@@ -1,36 +1,52 @@
+/* 1. Tell the body to center the clock on the screen */
 body {
     background-image: url('summerBackground.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    align-items: center;
-    display: flex;
-
     
+    /* Center anything inside the body  perfectly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes up 100% of the screen height */
+    margin: 0;
 }
-#clock-parent{
+
+/* 2. Your Clock Face Container */
+#clock-parent {
+     position: relative; /* 🌟 CRUCIAL: This anchors the absolute hands inside the circle */
      border-radius: 50%;
-     border-width: 15px;
-     border-color: rgb(10, 123, 244);
+     border: 15px solid rgb(10, 123, 244);
      width: 200px;
      height: 200px;
-     border-style: solid;
-     transition-property: transform border-color;
-     transition-timing-function: ease;
-     transition-duration: 4s;
-    
-   
-    
+     transition: border-color 4s ease;
 }
- #clock-parent:hover{
-    transform: rotate(1turn);
-    border-color:rgb(93, 163, 238) ;
+
+#clock-parent:hover {
+    border-color: rgb(93, 163, 238);
 }
-#hour-hand {
-    width: 50%;
-    height: 6px;
+
+/* 3. The Shared Hand Positioning */
+.hand {
+    position: absolute;
+    bottom: 50%; 
+    width:6px;
+    left: 50%;   
+    transform-origin: bottom; 
+     margin-left: -3px; /* Centers the 6px width perfectly */
     background: black;
-    transform: rotate(90deg);
+    border-radius: 15px;
+}
 
-
+/* 4. The Specific Hour Hand Dimensions */
+#hour-hand {
+    height: 70px;
+}
+#second-hand {
+     height: 90px;
+}
+#minute-hand {
+    height: 80px;
+    transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
 }
