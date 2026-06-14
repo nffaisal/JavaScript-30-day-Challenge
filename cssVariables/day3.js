@@ -6,7 +6,7 @@ base.addEventListener('change', e => {
     const newColor = e.target.value;
     const span = document.querySelector('span');
     //console.log(newColor);
-    image.style.borderColor =newColor;
+    image.style.backgroundColor =newColor;
     span.style.color =newColor;
 
 })
@@ -18,6 +18,7 @@ blur.addEventListener('input', e =>
  spacing.addEventListener('input', e=>
  {
     const spacingValue = e.target.value;
-    image.style.padding=`(${spacingValue}px)`;
+    image.style.padding=`${spacingValue}px`
+    image.style.transform=`translate(${spacingValue}px)`;
  }
  )
